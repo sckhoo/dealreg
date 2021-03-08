@@ -127,6 +127,7 @@ app.post('/submit', function(req, res) {
             var sql = 'SELECT * FROM deals WHERE dealNo = ?';
 
 
+            
 
             db.query(sql, [result.insertId], function(err, result) {
                 if (err) throw err;
