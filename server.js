@@ -180,7 +180,7 @@ function sendmail(dealid, emailto) {
             },
             from: process.env.EMAIL_USER,
             to: emailto,
-            cc: "khoosc@avmcloud.net",
+            cc: "dealreg@avmcloud.net",
             subject: "AVM Deal Registration",
             html: htmlToSend,
             replyTo: process.env.EMAIL_USER,
