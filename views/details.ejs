@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Details</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <nav>
+            <h4>AVM DealReg Administration Page</h4>
+            <ul>
+                <Li><a href="/avmlogin">Home</a></Li>
+            </ul>
+        </nav>
+        <div class="container mt-4">
+            <div class="card">
+                <div class="card-header">
+                  Detail of registered deal new
+                </div>
+                <% if(typeof msg !== 'undefined') { %>
+                    <h4 class="alert alert-danger mt-4">
+                        <%= msg %>
+                    </h4>
+                  <% } %>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Field</th>
+                            <th scope="col">Data</th>
+                        </tr>
+                    </thead>
+                    <form method="POST">
+                        <tbody>
+                        <% if (details.length > 0) { %>
+                            <% details.forEach(details => { %>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Deal Registration Number</td>
+                                        <td><%= details.dealNo %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Opportunity Name</td>
+                                        <td><%= details.oppName %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Opportunity Value</td>
+                                        <td><%= details.oppValue %></td>
+                                    </tr>
+                    
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>Prospect's Name</td>
+                                        <td><%= details.custName %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">6</th>
+                                        <td>Prospect's Address</td>
+                                        <td><%= details.custAdd %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">7</th>
+                                        <td>Prospect's State</td>
+                                        <td><%= details.custState %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">8</th>
+                                        <td>Prospect's Country</td>
+                                        <td><%= details.custCountry %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">9</th>
+                                        <td>Prospect's Number of Employee</td>
+                                        <td><%= details.custEmployee %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">10</th>
+                                        <td>Prospect's Number of VM</td>
+                                        <td><%= details.custVM %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">11</th>
+                                        <td>Prospect's Applications</td>
+                                        <td><%= details.custApps %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">12</th>
+                                        <td>Prospect's Budget</td>
+                                        <td><%= details.custBudget %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">13</th>
+                                        <td>Prospect's estimated close date</td>
+                                        <td><%= details.closeDate %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">14</th>
+                                        <td>Reseller Company Name</td>
+                                        <td><%= details.submitterReseller %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">15</th>
+                                        <td>Reseller Person In Charge</td>
+                                        <td><%= details.submitterName %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">16</th>
+                                        <td>Reseller Person In Charge designation</td>
+                                        <td><%= details.submitterDesignation %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">17</th>
+                                        <td>Reseller Person In Charge phone</td>
+                                        <td><%= details.submitterPhone %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">18</th>
+                                        <td>Reseller Person In Charge email</td>
+                                        <td><%= details.submitterEmail %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">19</th>
+                                        <td>Reseller activities</td>
+                                        <td><%= details.submitterActivity %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">20</th>
+                                        <td>Deal registration status</td>
+                                        <td><%= details.dealRegStatus %></td>
+                                    </tr>
+                                    <tr>
+                                        <% if (details.dealRegStatus !== 'accept') { %>
+                                            <button class="accept" formaction="/accept/<%= details.dealNo %>/<%=email %>">Accept</button>
+                                        <% } %>
+                                        <% if (details.dealRegStatus !== 'reject') { %>
+                                            <button class="accept" formaction="/reject/<%= details.dealNo %>/<%=email %>">Reject</button>
+                                        <% } %>
+                                        <% if (details.dealRegStatus !== 'closed') { %>
+                                            <button class="accept" formaction="/close/<%= details.dealNo %>/<%=email %>">Close</button>
+                                        <% } %>
+                                    </tr>
+                            <% }) %>
+                        <% } %>
+                        </tbody>    
+                    </form>
+                </table>
+                <% if(typeof msg !== 'undefined') { %>
+                    <h4 class="alert alert-danger mt-4">
+                        <%= msg %>
+                    </h4>
+                  <% } %>
+              </div>
+        </div>
+        <BR>
+        <nav>
+     
+        </nav>
+    </body>
+</html>

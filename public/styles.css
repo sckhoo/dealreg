@@ -1,0 +1,94 @@
+nav {
+    background-color: #1069f3;
+    color: #fff;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 8px;
+}
+
+nav li a:hover {
+    color: yellow;
+    text-decoration: none;
+}
+
+html {
+    width: 100%;
+    background-color: white;
+}
+
+body {
+    max-width: 100%;
+    margin: auto;
+    background-color: white;
+    height: 40em;
+}
+
+h1 {
+    background-color: #404040;
+    color: white;
+    margin: auto;
+    padding: 0px;
+    max-width: 100%;
+    text-align: center;
+    height: 50px;
+    
+}
+
+form {
+    margin-top: 30px;
+    padding: 10px;
+    margin-left: 100px;
+}
+
+input {
+    width: 300px;
+}
+
+div {
+    margin-top: 30px;
+}
+
+.submitBtn {
+    margin-top: 30px;
+    margin-left: 200px;
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.thanks {
+    max-width: 50%;
+    margin: auto;
+    background-color: #404040;
+    color: white;
+    height: 13cm;
+    font-size: 2.5em;
+}
+
+.text {
+    padding: 10px;
+    text-align: center;
+}

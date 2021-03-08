@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+              Thank you for submitting the deal registration
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Field</th>
+                <th scope="col">Data</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% deal.forEach(deal => { %>    
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Deal Registration Number</td>
+                    <td><%= deal.dealNo %></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Opportunity Name</td>
+                    <td><%= deal.oppName %></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Opportunity Value</td>
+                    <td><%= deal.oppValue %></td>
+                </tr>
+
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Prospect's Name</td>
+                    <td><%= deal.custName %></td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Prospect's Address</td>
+                    <td><%= deal.custAdd %></td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>Prospect's State</td>
+                    <td><%= deal.custState %></td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>Prospect's Country</td>
+                    <td><%= deal.custCountry %></td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td>Prospect's Number of Employee</td>
+                    <td><%= deal.custEmployee %></td>
+                </tr>
+                <tr>
+                    <th scope="row">10</th>
+                    <td>Prospect's Number of VM</td>
+                    <td><%= deal.custVM %></td>
+                </tr>
+                <tr>
+                    <th scope="row">11</th>
+                    <td>Prospect's Applications</td>
+                    <td><%= deal.custApps %></td>
+                </tr>
+                <tr>
+                    <th scope="row">12</th>
+                    <td>Prospect's Budget</td>
+                    <td><%= deal.custBudget %></td>
+                </tr>
+                <tr>
+                    <th scope="row">13</th>
+                    <td>Prospect's estimated close date</td>
+                    <td><%= deal.closeDate %></td>
+                </tr>
+                <tr>
+                    <th scope="row">14</th>
+                    <td>Reseller Company Name</td>
+                    <td><%= deal.submitterReseller %></td>
+                </tr>
+                <tr>
+                    <th scope="row">15</th>
+                    <td>Reseller Person In Charge</td>
+                    <td><%= deal.submitterName %></td>
+                </tr>
+                <tr>
+                    <th scope="row">16</th>
+                    <td>Reseller Person In Charge designation</td>
+                    <td><%= deal.submitterDesignation %></td>
+                </tr>
+                <tr>
+                    <th scope="row">17</th>
+                    <td>Reseller Person In Charge phone</td>
+                    <td><%= deal.submitterPhone %></td>
+                </tr>
+                <tr>
+                    <th scope="row">18</th>
+                    <td>Reseller Person In Charge email</td>
+                    <td><%= deal.submitterEmail %></td>
+                </tr>
+                <tr>
+                    <th scope="row">19</th>
+                    <td>Reseller activities</td>
+                    <td><%= deal.submitterActivity %></td>
+                </tr>
+                <tr>
+                    <th scope="row">20</th>
+                    <td>Deal registration status</td>
+                    <td><%= deal.dealRegStatus %></td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

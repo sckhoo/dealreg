@@ -1,0 +1,30 @@
+CREATE TABLE `deals` (
+	`dealNo` INT(16) NULL,
+	`oppName` VARCHAR(50) NULL COLLATE 'utf8_general_ci',
+	`oppValue` INT(16) NULL,
+	`oppClosedate` DATE NULL,
+	`custName` VARCHAR(128) NULL COLLATE 'utf8_general_ci',
+	`custAdd` VARCHAR(128) NULL COLLATE 'utf8_general_ci',
+	`custState` VARCHAR(128) NULL COLLATE 'utf8_general_ci',
+	`custCountry` VARCHAR(128) NULL COLLATE 'utf8_general_ci',
+	`custEmployee` VARCHAR(128) NULL COLLATE 'utf8_general_ci',
+	`custVM` INT(16) NULL,
+	`custApps` VARCHAR(128) NULL COLLATE 'utf8_general_ci',
+	`custBudget` INT(16) NULL,
+	`closeDate` DATE NULL,
+	`submitterReseller` VARCHAR(128) NULL COLLATE 'utf8_general_ci',
+	`submitterName` VARCHAR(128) NULL COLLATE 'utf8_general_ci',
+	`submitterDesignation` VARCHAR(128) NULL COLLATE 'utf8_general_ci',
+	`submitterPhone` VARCHAR(128) NULL COLLATE 'utf8_general_ci',
+	`submitterEmail` VARCHAR(128) NULL COLLATE 'utf8_general_ci',
+	`submitterActivity` VARCHAR(128) NULL COLLATE 'utf8_general_ci',
+	`dealRegStatus` VARCHAR(16) NULL COLLATE 'utf8_general_ci',
+	`dealRegExpiredate` DATE NULL,
+	`dealRegSubmitDate` TIMESTAMP NULL,
+	`dealRegARdate` TIMESTAMP NULL,
+	`dealRegARby` VARCHAR(16) NULL COLLATE 'utf8_general_ci',
+	`dealRegARreason` VARCHAR(128) NULL COLLATE 'utf8_general_ci'
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;

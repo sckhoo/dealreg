@@ -1,0 +1,149 @@
+html {
+    width: 100%;
+    background-color: white;
+}
+
+body {
+    max-width: 100%;
+    margin: auto;
+    background-color: white;
+    height: 40em;
+}
+
+h1 {
+    background-color: #404040;
+    color: white;
+    margin: auto;
+    padding: 0px;
+    max-width: 100%;
+    text-align: center;
+    height: 50px;
+    
+}
+
+.label {
+    /* border-style: solid; */
+    max-width: 90%;
+    margin: 10px auto;
+    background-color: white;
+    padding: 10px;
+}
+
+label {
+    font-size: 1.5em;
+}
+
+.deals {
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.pending, .accept, .reject {
+    padding-left: 10px;
+    display: block;
+    border-left: 6px solid white;
+    text-decoration: none;
+    color: black;
+    height: 50px;
+}
+
+.pending:hover, .accept:hover, .reject:hover {
+    border-left: 6px solid #0080FF;
+}
+
+.user {
+    font-size: 1.2em;
+    margin-left: 30px;
+}
+
+.dropbtn {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    padding: 2px 0px;
+    width: 50px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #E0E0E0;
+  }
+  
+  .dropdown {
+    position: absolute;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    padding: 5px auto;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 5px auto;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+
+  tr[data-href] {
+      cursor: pointer;
+  }
+
+  table {
+      width: 100%;
+  }
+
+  button {
+    background-color: #A0A0A0;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+nav {
+    background-color: #1069f3;
+    color: #fff;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 8px;
+}
+
+nav li a:hover {
+    color: yellow;
+    text-decoration: none;
+}

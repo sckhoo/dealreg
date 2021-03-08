@@ -1,0 +1,48 @@
+html {
+    width: 100%;
+    background-color: white;
+}
+
+body {
+    max-width: 100%;
+    margin: auto;
+    background-color: white;
+    height: 40em;
+}
+
+h1 {
+    background-color: #404040;
+    color: white;
+    margin: auto;
+    padding: 0px;
+    max-width: 100%;
+    text-align: center;
+    height: 50px;
+    
+}
+
+form {
+    margin-top: 30px;
+    padding: 10px;
+    margin-left: 10.5cm;
+    width: 50%;
+    margin-right: 10.5cm
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.accept, .reject, .text {
+    background-color: #404040;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0px 30px 150px;
+    cursor: pointer;
+}
+

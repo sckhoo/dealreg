@@ -1,0 +1,20 @@
+        var oppName = req.body.oppName;
+        var oppValue = req.body.oppValue;
+        var oppClosedate = req.body.oppClosedate;
+
+        var custName = req.body.custName;
+        var custAdd = req.body.custAdd;
+        var custState = req.body.custState;
+        var custCountry = req.body.custCountry;
+        var custEmployee = req.body.custEmployee;
+        var custVM = req.body.custVM;
+        var custApps = req.body.custApps;
+        var custBudget = req.body.custBudget;
+        var closeDate = req.body.closeDate;
+        
+        var submitterReseller = req.body.submitterReseller;
+        var submitterName = req.body.submitterName;
+        var submitterDesignation = req.body.submitterDesignation;
+        var submitterPhone = req.body.submitterPhone;
+        var submitterEmail = req.body.submitterEmail;
+        var submitterActivity = req.body.submitterActivity;

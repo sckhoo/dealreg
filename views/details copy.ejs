@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Details</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <nav>
+            <h4>AVM DealReg Administration Page</h4>
+            <ul>
+                <Li><a href="/avmlogin">Home</a></Li>
+            </ul>
+        </nav>
+        <div class="container mt-4">
+            <div class="card">
+                <div class="card-header">
+                  Detail of registered deal
+                </div>
+                <% if(typeof msg !== 'undefined') { %>
+                    <h4 class="alert alert-danger mt-4">
+                        <%= msg %>
+                    </h4>
+                  <% } %>
+                <div class="card-body">
+                    <form method="POST">
+                        <% if (details.length > 0) { %>
+                            <% details.forEach(details => { %>
+                                <% if (details.dealRegStatus === 'pending') { %>
+                                <div>
+                                    <h3>Deal Registration No</h3>
+                                    <p><%= details.dealNo %></p>
+                                </div>
+                                <div>
+                                    <h3>Opportunity Name</h3>
+                                    <p><%= details.oppName %></p>
+                                </div>
+                                <div>
+                                    <h3>End User Account Name</h3>
+                                    <p><%= details.custName %></p>
+                                </div>
+                                <div>
+                                    <h3>Country</h3>
+                                    <p><%= details.custCountry %></p>
+                                </div>
+                                <div>
+                                    <h3>State</h3>
+                                    <p><%= details.custState %></p>
+                                </div>
+                                <div>
+                                    <h3>Total Employee for account</h3>
+                                    <p><%= details.custEmployee %></p>
+                                </div>
+                                <div>
+                                    <h3>Planned Close Date</h3>
+                                    <p><%= details.closeDate %></p>
+                                </div>
+                                <div>
+                                    <h3>Reseller</h3>
+                                    <p><%= details.submitterReseller %></p>
+                                </div>
+                                <div>
+                                    <h3>Deal Registration Submitter</h3>
+                                    <p><%= details.submitterName %></p>
+                                </div>
+                                <div>
+                                    <h3>Total Forecast Revenue (RM)</h3>
+                                    <p><%= details.oppValue %></p>
+                                </div>
+
+                                <button class="accept" formaction="/accept/<%= details.dealNo %>/<%=email %>">Accept</button>
+                                <button class="reject" formaction="/reject/<%= details.dealNo %>/<%=email %>">Reject</button>
+                                <% } else if (details.dealRegStatus === 'accept') {%>
+                                    <div>
+                                        <h3>Deal Registration No</h3>
+                                        <p><%= details.dealNo %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Opportunity Name</h3>
+                                        <p><%= details.oppName %></p>
+                                    </div>
+                                    <div>
+                                        <h3>End User Account Name</h3>
+                                        <p><%= details.custName %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Country</h3>
+                                        <p><%= details.custCountry %></p>
+                                    </div>
+                                    <div>
+                                        <h3>State</h3>
+                                        <p><%= details.custState %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Total Employee for account</h3>
+                                        <p><%= details.custEmployee %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Planned Close Date</h3>
+                                        <p><%= details.closeDate %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Reseller</h3>
+                                        <p><%= details.submitterReseller %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Deal Registration Submitter</h3>
+                                        <p><%= details.submitterName %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Total Forecast Revenue (RM)</h3>
+                                        <p><%= details.oppValue %></p>
+                                    </div>
+
+                                    <button class="text" formaction="/close/<%= details.dealNo %>/<%=email %>">End Deal</button>
+                                <% } else { %>
+                                    <div>
+                                        <h3>Deal Registration No</h3>
+                                        <p><%= details.dealNo %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Opportunity Name</h3>
+                                        <p><%= details.oppName %></p>
+                                    </div>
+                                    <div>
+                                        <h3>End User Account Name</h3>
+                                        <p><%= details.custName %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Country</h3>
+                                        <p><%= details.custCountry %></p>
+                                    </div>
+                                    <div>
+                                        <h3>State</h3>
+                                        <p><%= details.custState %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Total Employee for account</h3>
+                                        <p><%= details.custEmployee %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Planned Close Date</h3>
+                                        <p><%= details.closeDate %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Reseller</h3>
+                                        <p><%= details.submitterReseller %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Deal Registration Submitter</h3>
+                                        <p><%= details.submitterName %></p>
+                                    </div>
+                                    <div>
+                                        <h3>Total Forecast Revenue (RM)</h3>
+                                        <p><%= details.oppValue %></p>
+                                    </div>
+
+                                    <p class="text" >This deal has been rejected</p>
+                                <% } %>
+                            <% }) %>
+                        <% } %>
+                    </form>
+                </div>
+                <% if(typeof msg !== 'undefined') { %>
+                    <h4 class="alert alert-danger mt-4">
+                        <%= msg %>
+                    </h4>
+                  <% } %>
+              </div>
+        </div>
+    </body>
+</html>

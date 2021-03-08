@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h4>AVM Deal Registration Page</h4>
+        <ul>
+            <Li><a href="/home">Home</a></Li>
+            <Li><a href="/login">Login</a></Li>
+            <Li><a href="/register">Register</a></Li>
+        </ul>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+              Register Form
+            </div>
+            <div class="card-body">
+            <form method="POST" name="form" action="/submit">          
+                <div class="mb-3">
+                    <label for="oppName" class="form-label">Opportunity Name:</label>
+                    <input type="text" class="form-control" id="oppName" name="oppName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="oppValue" class="form-label">Opportunity Value:</label>
+                    <input type="text" class="form-control" id="oppValue" name="oppValue">
+                </div>
+
+                <div class="mb-3">
+                    <label for="oppClosedate" class="form-label">Opportunity Close Date:</label>
+                    <input type="date" class="form-control" id="oppClosedate" name="oppClosedate">
+                </div>
+    
+                <div class="mb-3">
+                    <label for="custName" class="form-label">Customer Name:</label>
+                    <input type="text" class="form-control" id="custName" name="custName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="custAdd" class="form-label">Customer Address:</label>
+                    <input type="text" class="form-control" id="custAdd" name="custAdd">
+                </div>
+
+                <div class="mb-3">
+                    <label for="custState" class="form-label">Customer State:</label>
+                    <input type="text" class="form-control" id="custState" name="custState">
+                </div>
+
+                <div class="mb-3">
+                    <label for="custCountry" class="form-label">Customer Country:</label>
+                    <input type="text" class="form-control" id="custCountry" name="custCountry">
+                </div>
+    
+                <div class="mb-3">
+                    <label for="custEmployee" class="form-label">Customer Number of Employee</label>
+                    <input type="text" class="form-control" id="custEmployee" name="custEmployee">
+                </div>
+
+                <div class="mb-3">
+                    <label for="custVM" class="form-label">Customer Number of VM</label>
+                    <input type="text" class="form-control" id="custVM" name="custVM">
+                </div>
+
+                <div class="mb-3">
+                    <label for="custApps" class="form-label">Customer Applications</label>
+                    <input type="text" class="form-control" id="custApps" name="custApps">
+                </div>
+
+                <div class="mb-3">
+                    <label for="custBudget" class="form-label">Customer Budget</label>
+                    <input type="text" class="form-control" id="custBudget" name="custBudget">
+                </div>
+    
+                <div class="mb-3">
+                    <label for="closeDate" class="form-label">Planned Close Date:</label>
+                    <input type="date" class="form-control" id="closeDate" name="closeDate">
+                </div>
+    
+                <div class="mb-3">
+                    <label for="submitterReseller" class="form-label">Reseller Company Name</label>
+                    <input type="text" class="form-control" id="submitterReseller" name="submitterReseller">
+                </div>
+    
+                <div class="mb-3">
+                    <label for="submitterName" class="form-label">Reseller Submitter</label>
+                    <input type="text" class="form-control" id="submitterName" name="submitterName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="submitterDesignation" class="form-label">Reseller Submitter Designation</label>
+                    <input type="text" class="form-control" id="submitterDesignation" name="submitterDesignation" >
+                </div>
+
+                <div class="mb-3">
+                    <label for="submitterPhone" class="form-label">Reseller Submitter Phone</label>
+                    <input type="text" class="form-control" id="submitterPhone" name="submitterPhone">
+                </div>
+
+                <div class="mb-3">
+                    <label for="submitterEmail" class="form-label">Reseller Submitter Email</label>
+                    <input type="text" class="form-control" id="submitterEmail" name="submitterEmail">
+                </div>
+
+                <div class="mb-3">
+                    <label for="submitterActivity" class="form-label">Reseller Activity</label>
+                    <input type="text" class="form-control" id="submitterActivity" name="submitterActivity">
+                </div>
+
+                <button class="submitBtn">Submit</button>
+            </form>
+        </div>
+        <% if(typeof msg !== 'undefined') { %>
+            <h4 class="alert alert-danger mt-4">
+                <%= msg %>
+            </h4>
+          <% } %>
+      </div>
+
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
