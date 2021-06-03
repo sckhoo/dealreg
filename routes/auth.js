@@ -12,4 +12,6 @@ router.post('/avmregister', authController.avmregister );
 
 router.post('/avmlogin', authController.avmlogin );
 
+// router.post('/avmdownload', authController.avmdownload );
+
 module.exports = router;
