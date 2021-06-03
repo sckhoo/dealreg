@@ -64,6 +64,9 @@ app.post('/submit', function(req, res) {
         var oppClosedate = req.body.closeDate;
 
         var custName = req.body.custName;
+        var custPICName = req.body.custPICName;
+        var custPICPhone = req.body.custPICPhone;
+        var custPICEmail = req.body.custPICEmail;
         var custAdd = req.body.custAdd;
         var custState = req.body.custState;
         var custCountry = req.body.custCountry;
@@ -78,26 +81,29 @@ app.post('/submit', function(req, res) {
         var submitterDesignation = req.body.submitterDesignation;
         var submitterPhone = req.body.submitterPhone;
         var submitterEmail = req.body.submitterEmail;
+        var submitterSEName = req.body.submitterSEName;
+        var submitterSEPhone = req.body.submitterSEPhone;
+        var submitterSEEmail = req.body.submitterSEEmail;
         var submitterActivity = req.body.submitterActivity;
 
 
-        if ( !oppName || !oppValue || !closeDate || !custName || !submitterReseller || !submitterName || !submitterEmail ) {
-            return res.status(400).render('dealreg', {
-                msg: "Require Opportunity name, Prospect name, Prospect's close data, Reseller name, Reseller contact person and email"
-            })
-        }
+        // if ( !oppName || !oppValue || !closeDate || !custName || !submitterReseller || !submitterName || !submitterEmail ) {
+        //     return res.status(400).render('dealreg', {
+        //         msg: "Require Opportunity name, Prospect name, Prospect's close data, Reseller name, Reseller contact person and email"
+        //     })
+        // }
 
-        if ( !custVM ) {
-            custVM = 0;
-        }
+        // if ( !custVM ) {
+        //     custVM = 0;
+        // }
 
-        if ( !custBudget ) {
-            custBudget = oppValue;
-        }
+        // if ( !custBudget ) {
+        //     custBudget = oppValue;
+        // }
 
-        if ( !oppClosedate ) {
-            oppClosedate = closeDate;
-        }
+        // if ( !oppClosedate ) {
+        //     oppClosedate = closeDate;
+        // }
 
         // date and time
         const d = DateTime.local();
@@ -112,12 +118,16 @@ app.post('/submit', function(req, res) {
         var sql = `INSERT INTO deals 
         ( 
           oppName, oppValue, oppClosedate,
-          custName, custAdd, custState, custCountry, custEmployee, custVM, custApps, custBudget, closeDate,
-          submitterReseller, submitterName, submitterDesignation, submitterPhone, submitterEmail, submitterActivity, dealRegStatus, dealRegSubmitdate ) 
+          custName, custPICName, custPICPhone, custPICEmail, custAdd, custState, custCountry, custEmployee, custVM, custApps, custBudget, closeDate,
+          submitterReseller, submitterName, submitterDesignation, submitterPhone, submitterEmail, 
+          submitterSEName, submitterSEPhone, submitterSEEmail, submitterActivity, 
+          dealRegStatus, dealRegSubmitdate ) 
           VALUES ( 
             '${oppName}', '${oppValue}', '${oppClosedate}', 
-            '${custName}', '${custAdd}', '${custState}', '${custCountry}', '${custEmployee}', '${custVM}', '${custApps}', '${custBudget}','${closeDate}',
-            '${submitterReseller}', '${submitterName}', '${submitterDesignation}', '${submitterPhone}', '${submitterEmail}', '${submitterActivity}', 'pending','${date}' )`;
+            '${custName}', '${custPICName}', '${custPICPhone}', '${custPICEmail}', '${custAdd}', '${custState}', '${custCountry}', '${custEmployee}', '${custVM}', '${custApps}', '${custBudget}','${closeDate}',
+            '${submitterReseller}', '${submitterName}', '${submitterDesignation}', '${submitterPhone}', '${submitterEmail}', 
+            '${submitterSEName}', '${submitterSEPhone}', '${submitterSEEmail}', '${submitterActivity}', 
+            'pending','${date}' )`;
 
         db.query(sql, function(err, result) {
             if (err) throw err;
@@ -143,7 +153,7 @@ app.post('/submit', function(req, res) {
                     },
                     from: process.env.EMAIL_USER,
                     to: result[0].submitterEmail,
-                    cc: "dealreg@avmcloud.net",
+                    cc: "sckhoo@gmail.com",
                     subject: "AVM Deal registered : Reference number is " + result[0].dealNo,
                     html: htmlToSend,
 
@@ -163,7 +173,7 @@ app.post('/submit', function(req, res) {
     })
 })
 
-function sendmail(dealid, emailto) {
+/* function sendmail(dealid, emailto) {
     console.log("inside sendmail function");
     var sql = 'SELECT * FROM deals WHERE dealNo = ?';
     db.query(sql, dealid, function(err, result) {
@@ -189,7 +199,7 @@ function sendmail(dealid, emailto) {
             onSuccess: (i) => console.log(i)
         });  
     })
-}
+} */
 
 
 

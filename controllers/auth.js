@@ -21,7 +21,7 @@ exports.login = async (req, res) => {
                 if ( !results || !(await bcrypt.compare(password, results[0].password))) {
                    res.status(401).render('login', { msg: "Email or password is incorrect" });
                 } else {
-                    res.status(200).render('dealreg', { msg: "* Mandatory field" });
+                    res.status(200).render('dealreg', { msg: "Please note that inaccurate or incomplete information will cause your Deal Registration application to be rejected" });
                 }
             })
     } catch (error) {

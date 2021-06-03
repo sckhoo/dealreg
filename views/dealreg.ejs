@@ -18,98 +18,131 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-              Deal Registration Form
+              <h2>Deal Registration Form</h2> 
             </div>
             <% if(typeof msg !== 'undefined') { %>
                 <h4 class="alert alert-danger mt-4">
                     <%= msg %>
                 </h4>
               <% } %>
+            <div class="mb-3">
+                <h4 class="alert alert-danger mt-4">* Mandatory Field</h4>
+            </div>
             <div class="card-body">
             <form method="POST" name="form" action="/submit">          
                 <div class="mb-3">
-                    <label for="oppName" class="form-label">Opportunity Name (Prospect's project name) (Mandatory field)</label>
-                    <input type="text" class="form-control" id="oppName" name="oppName">
+                    <label for="oppName" class="form-label">Opportunity Name (Prospect's project name) *</label>
+                    <input type="text" class="form-control" id="oppName" name="oppName" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="oppValue" class="form-label">Opportunity Value: (Mandatory field)</label>
-                    <input type="text" class="form-control" id="oppValue" name="oppValue">
+                    <label for="oppValue" class="form-label">Opportunity Value: *</label>
+                    <input type="text" class="form-control" id="oppValue" name="oppValue" required>
                 </div>
     
                 <div class="mb-3">
-                    <label for="custName" class="form-label">Prospect's Name: (Mandatory field)</label>
-                    <input type="text" class="form-control" id="custName" name="custName">
+                    <label for="custName" class="form-label">Prospect's Name: *</label>
+                    <input type="text" class="form-control" id="custName" name="custName" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="custPICName" class="form-label">Prospect's Person In Charge *</label>
+                    <input type="text" class="form-control" id="custPICName" name="custPICName" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="custAdd" class="form-label">Prospect's Address:</label>
-                    <input type="text" class="form-control" id="custAdd" name="custAdd">
+                    <label for="custPICPhone" class="form-label">Prospect's Person In Charge Phone: *</label>
+                    <input type="text" class="form-control" id="custPICPhone" name="custPICPhone" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="custState" class="form-label">Prospect's State:</label>
-                    <input type="text" class="form-control" id="custState" name="custState">
+                    <label for="custPICEmail" class="form-label">Prospect's Person In Charge Email *</label>
+                    <input type="email" class="form-control" id="custPICEmail" name="custPICEmail" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="custCountry" class="form-label">Prospect's Country:</label>
-                    <input type="text" class="form-control" id="custCountry" name="custCountry">
+                    <label for="custAdd" class="form-label">Prospect's Address: *</label>
+                    <input type="text" class="form-control" id="custAdd" name="custAdd" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="custState" class="form-label">Prospect's State: *</label>
+                    <input type="text" class="form-control" id="custState" name="custState" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="custCountry" class="form-label">Prospect's Country: *</label>
+                    <input type="text" class="form-control" id="custCountry" name="custCountry" required>
                 </div>
     
                 <div class="mb-3">
-                    <label for="custEmployee" class="form-label">Prospect's Number of Employee</label>
-                    <input type="text" class="form-control" id="custEmployee" name="custEmployee">
+                    <label for="custEmployee" class="form-label">Prospect's Number of Employee: *</label>
+                    <input type="text" class="form-control" id="custEmployee" name="custEmployee" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="custVM" class="form-label">Prospect's Number of VM</label>
-                    <input type="text" class="form-control" id="custVM" name="custVM">
+                    <label for="custVM" class="form-label">Prospect's Number of VM: *</label>
+                    <input type="text" class="form-control" id="custVM" name="custVM" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="custApps" class="form-label">Prospect's Applications</label>
-                    <input type="text" class="form-control" id="custApps" name="custApps">
+                    <label for="custApps" class="form-label">Prospect's Applications: *</label>
+                    <input type="text" class="form-control" id="custApps" name="custApps" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="custBudget" class="form-label">Prospect's Budget</label>
-                    <input type="text" class="form-control" id="custBudget" name="custBudget">
+                    <label for="custBudget" class="form-label">Prospect's Budget: *</label>
+                    <input type="text" class="form-control" id="custBudget" name="custBudget" required>
                 </div>
     
                 <div class="mb-3">
-                    <label for="closeDate" class="form-label">Prospect's estimated close date: (Mandatory field)</label>
-                    <input type="date" class="form-control" id="closeDate" name="closeDate">
+                    <label for="closeDate" class="form-label">Prospect's estimated close date: *</label>
+                    <input type="date" class="form-control" id="closeDate" name="closeDate" required>
                 </div>
     
                 <div class="mb-3">
-                    <label for="submitterReseller" class="form-label">Reseller Company Name (Mandatory field)</label>
-                    <input type="text" class="form-control" id="submitterReseller" name="submitterReseller">
+                    <label for="submitterReseller" class="form-label">Reseller Company Name *</label>
+                    <input type="text" class="form-control" id="submitterReseller" name="submitterReseller" required>
                 </div>
     
                 <div class="mb-3">
-                    <label for="submitterName" class="form-label">Reseller Person In Charge (Mandatory field)</label>
-                    <input type="text" class="form-control" id="submitterName" name="submitterName">
+                    <label for="submitterName" class="form-label">Reseller Person In Charge *</label>
+                    <input type="text" class="form-control" id="submitterName" name="submitterName" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="submitterDesignation" class="form-label">Reseller Person In Charge Designation</label>
-                    <input type="text" class="form-control" id="submitterDesignation" name="submitterDesignation" >
+                    <label for="submitterDesignation" class="form-label">Reseller Person In Charge Designation: *</label>
+                    <input type="text" class="form-control" id="submitterDesignation" name="submitterDesignation" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="submitterPhone" class="form-label">Reseller Person In Charge Phone</label>
-                    <input type="text" class="form-control" id="submitterPhone" name="submitterPhone">
+                    <label for="submitterPhone" class="form-label">Reseller Person In Charge Phone: *</label>
+                    <input type="text" class="form-control" id="submitterPhone" name="submitterPhone" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="submitterEmail" class="form-label">Reseller Person In Charge Email (Mandatory field)</label>
-                    <input type="email" class="form-control" id="submitterEmail" name="submitterEmail">
+                    <label for="submitterEmail" class="form-label">Reseller Person In Charge Email *</label>
+                    <input type="email" class="form-control" id="submitterEmail" name="submitterEmail" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="submitterActivity" class="form-label">Reseller Activity (e.g. Assessment Done, Budget Analysis, Customer Demo, Initial Meet up)</label>
-                    <input type="text" class="form-control" id="submitterActivity" name="submitterActivity">
+                    <label for="submitterSEName" class="form-label">Reseller Lead Pre-sales *</label>
+                    <input type="text" class="form-control" id="submitterSEName" name="submitterSEName" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="submitterSEPhone" class="form-label">Reseller Lead Pre-sales Phone: *</label>
+                    <input type="text" class="form-control" id="submitterSEPhone" name="submitterSEPhone" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="submitterSEEmail" class="form-label">Reseller Lead Pre-sales Email *</label>
+                    <input type="email" class="form-control" id="submitterSEEmail" name="submitterSEEmail" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="submitterActivity" class="form-label">Reseller Activity (e.g. Assessment Done, Budget Analysis, Customer Demo, Initial Meet up): *</label>
+                    <input type="text" class="form-control" id="submitterActivity" name="submitterActivity" required>
                 </div>
 
                 <button class="submitBtn">Submit Deal Registration</button>
