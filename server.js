@@ -153,7 +153,7 @@ app.post('/submit', function(req, res) {
                     },
                     from: process.env.EMAIL_USER,
                     to: result[0].submitterEmail,
-                    cc: "sckhoo@gmail.com",
+                    cc: "khoosc@avmcloud.net",
                     subject: "AVM Deal registered : Reference number is " + result[0].dealNo,
                     html: htmlToSend,
 
@@ -173,7 +173,7 @@ app.post('/submit', function(req, res) {
     })
 })
 
-/* function sendmail(dealid, emailto) {
+function sendmail(dealid, emailto) {
     console.log("inside sendmail function");
     var sql = 'SELECT * FROM deals WHERE dealNo = ?';
     db.query(sql, dealid, function(err, result) {
@@ -190,7 +190,7 @@ app.post('/submit', function(req, res) {
             },
             from: process.env.EMAIL_USER,
             to: emailto,
-            cc: "dealreg@avmcloud.net",
+            cc: "khoosc@avmcloud.net",
             subject: "AVM Deal Registration",
             html: htmlToSend,
             replyTo: process.env.EMAIL_USER,
@@ -199,7 +199,7 @@ app.post('/submit', function(req, res) {
             onSuccess: (i) => console.log(i)
         });  
     })
-} */
+}
 
 
 

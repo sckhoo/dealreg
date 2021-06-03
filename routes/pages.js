@@ -42,6 +42,12 @@ router.get('/login', (req,res) => {
     res.render('login');
 });
 
+router.get('/avmdownload', (req,res) => {
+    const file = `${__dirname}/../sql2csv.csv`;
+    res.download(file); // Set disposition and send it.
+    console.log("download")
+});
+
 router.get('/avmlogin', (req,res) => {
     res.render('avmlogin', {
         msg: "For AVM internal Administrator only"

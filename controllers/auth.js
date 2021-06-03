@@ -1,6 +1,9 @@
 const mysql = require('mysql');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const fastcsv = require("fast-csv");
+const fs = require("fs");
+const ws = fs.createWriteStream("sql2csv.csv");
 
 var db = mysql.createConnection({
     host: process.env.DATABASE_HOST,
@@ -91,7 +94,17 @@ exports.avmlogin = async (req, res) => {
             })
         } else {
             var sql = ('SELECT * FROM deals');
-            db.query(sql, function(err, result) {            
+            db.query(sql, function(err, result) {  
+                if (err) throw err;
+                const jsonData = JSON.parse(JSON.stringify(result));
+                // console.log("jsonData", jsonData);
+                fastcsv
+                    .write(jsonData, { headers: true })
+                    .on("finish", function() {
+                        // console.log("Write to sql2csv.csv successfully!");
+                    })
+                    .pipe(ws);
+
                 res.render('avmdealadmin', {email: email, deal: result});
             })
         }})
@@ -99,6 +112,11 @@ exports.avmlogin = async (req, res) => {
     } catch (error) {
         console.log(error)
     }
+}
+
+exports.avmdownload = (req, res) => {
+    // const file = `${__dirname}/sql2csv.csv`;
+    // res.download(file); // Set disposition and send it.
 }
 
 exports.avmregister = (req, res) => {
